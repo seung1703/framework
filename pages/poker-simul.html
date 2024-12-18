@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포커 게임 족보</title>
+    <link rel="stylesheet" href="../css/pokerdt.css">
+    <link rel="stylesheet" href="../css/poker-simul.css">
+
+</head>
+<body>
+    <div class="page-logo">
+        <a href="../main_pages/mainVer1.html">
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+     <!-- 내비게이션 바 -->
+    <nav class="navbar">
+        <ul>
+            <li class="nav-item">
+                <a href="../main_pages/dice.html">야추다이스</a>
+                <div class="dropdown">
+                    <a href="../pages/dice-rules.html">게임 설명</a>
+                    <a href="../pages/dice-strategy.html">게임 룰</a>
+                    <a href="../pages/dice-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/poker.html">포커</a>
+                <div class="dropdown">
+                    <a href="../pages/poker-rules.html">게임 설명</a>
+                    <a href="../pages/poker-strategy.html">게임 룰</a>
+                    <a href="../pages/poker-hands.html">게임 족보</a>
+                    <a href="../pages/poker-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/blackjack.html">블랙잭</a>
+                <div class="dropdown">
+                    <a href="../pages/blackjack-rules.html">게임 설명</a>
+                    <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                    <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/mahjong.html">마작</a>
+                <div class="dropdown">
+                    <a href="../pages/mahjong-rules.html">게임 설명</a>
+                    <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                    <a href="../pages/mahjong-hands.html">게임 족보</a>
+                    <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 메인 이미지 -->
+    <!-- 양쪽 배경 이미지 -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+    <div class="main-content">
+        <div class="banner">
+            <p class="description">
+                <div class="container">
+                <header>
+                    <h1>포커 시뮬레이션</h1>
+                </header>
+
+                <section class="game-selection">
+                    <h2>게임 선택</h2>
+                    <button onclick="selectGame('texas')">텍사스 홀덤</button>
+                    <button onclick="selectGame('omaha')">오마하 포커</button>
+                    <button onclick="selectGame('stud')">스터드 포커</button>
+                    <!--<button onclick="selectGame('draw')">드로우 포커</button>-->
+                </section>
+
+                <section class="card-display">
+                    <h2>당신의 손패와 테이블 카드</h2>
+                    <div id="hand-cards" class="card-container"></div>
+                    <div id="community-cards" class="card-container"></div>
+                </section>
+
+                <section class="user-choice">
+                    <h2>족보를 선택하세요</h2>
+                    <select id="user-hand-choice">
+                        <option value="Royal Flush">로열 플러시</option>
+                        <option value="Straight Flush">스트레이트 플러시</option>
+                        <option value="Four of a Kind">포카드</option>
+                        <option value="Full House">풀 하우스</option>
+                        <option value="Flush">플러시</option>
+                        <option value="Straight">스트레이트</option>
+                        <option value="Three of a Kind">트리플</option>
+                        <option value="Two Pair">투페어</option>
+                        <option value="One Pair">원페어</option>
+                        <option value="High Card">하이카드</option>
+                    </select>
+                    <button onclick="evaluateChoice()">결과 확인</button>
+                </section>
+
+                <section id="result">
+                    <div class="r-box">
+                    <h2>결과</h2>
+                    <p id="feedback"></p>
+                    </div>
+                </section>
+                </div>
+            </p>
+        </div>
+    </div>
+    <footer>
+        
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/poker-simul.js"></script>
+</body>
+</html>

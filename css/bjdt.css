@@ -1,0 +1,366 @@
+/* 한글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Gowun+Dodum&family=Oswald:wght@200..700&display=swap');
+
+/* 영문 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap');
+
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Do Hyeon", sans-serif; /* 한글 폰트 기본 설정 */
+}
+
+/* HTML과 body 기본 설정 */
+html, body {
+    overflow-x: hidden; /* 수평 스크롤 방지 */
+    width: 100%;
+    height: 100%;
+}
+
+/* 본문 스타일 */
+body {
+    background-color: #2a2d2a; /* 배경색 */
+    color: #f5f5f7; /* 기본 글자색 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* 페이지 내 요소들 위치 조정을 위한 상대적 기준 설정 */
+}
+
+
+/* 페이지 로고 */
+.page-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* 다른 요소들 위에 로고 표시 */
+}
+
+.page-logo img {
+    max-width: 250px; /* 로고 크기 제한 */
+    height: auto;
+    cursor: pointer; /* 클릭 가능한 느낌 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    position: fixed;
+}
+
+/* 내비게이션 바 */
+.navbar-container {
+    position: relative;
+    width: 100%;
+}
+/* 내비게이션 바 */
+.navbar {
+    position: fixed; /* 화면 상단에 고정 */
+    top: 0; /* 상단 고정 위치 */
+    left: 0; /* 좌측 고정 */
+    width: 100%; /* 전체 너비 */
+    height: auto;
+    z-index: 900; /* 다른 요소 위로 올림 */
+    background-color: #004F2D; /* 배경색 */
+    text-align: center;
+    padding: 30px 0; /* 내비게이션 바 높이 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    margin-bottom: 60px;
+    display: block;
+}
+/* 내비게이션 바 항목 */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative; /* 드롭다운 메뉴를 위한 상대적 위치 설정 */
+}
+
+.navbar a {
+    color: #EDE1C4; /* 글자색 */
+    text-decoration: none;
+    font-size: 1.8em; /* 글씨 크기 */
+    padding: 15px 20px; /* 버튼 크기 */
+    font-family: "Gowun Dodum", sans-serif; /* 폰트 설정 */
+}
+
+.navbar a:hover {
+    color: #ff6a00; /* 호버 시 색상 변경 */
+}
+
+/* 드롭다운 스타일 */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3a3a3c;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 10px 0;
+    min-width: 160px;
+    z-index: 2; /* 드롭다운이 다른 요소 위로 표시되도록 설정 */
+}
+
+/* 드롭다운 메뉴 항목 */
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffb74d;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.dropdown a:hover {
+    color: #ff6a00;
+    background-color: #4a4a4c;
+}
+
+/* 마우스를 올리면 드롭다운 메뉴 표시 */
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.nav-item:hover {
+    z-index: 3; /* 드롭다운이 다른 요소들 위로 올라오도록 설정 */
+}
+/* 배경 이미지 */
+.background-left,
+.background-right {
+    position: fixed; /* 고정된 배경 */
+    top: 0;
+    height: 100%; /* 화면 높이 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(5px); /* 어두운 배경 및 블러 효과 */
+    z-index: -1; /* 콘텐츠 뒤로 배치 */
+    opacity: 0.6;
+}
+
+.background-left {
+    left: 0;
+    width: 20%; /* 화면의 20% 차지 */
+    background-image: url('../media/bj.png'); /* 왼쪽 배경 이미지 */
+}
+
+.background-right {
+    right: 0;
+    width: 20%; /* 화면의 20% 차지 */
+    background-image: url('../media/bj.png'); /* 오른쪽 배경 이미지 */
+}
+/* 메인 콘텐츠 */
+.main-content {
+    margin-top: 20px; /* 내비게이션 바 높이를 추가로 고려 */
+    max-width: 1200px; /* 중앙 정렬을 위한 너비 제한 */
+    margin-left: auto; /* 좌우 중앙 정렬 */
+    margin-right: auto; /* 좌우 중앙 정렬 */
+    padding: 20px; /* 내부 여백 */
+    border-radius: 8px; /* 선택적 둥근 모서리 */
+    position: relative; /* 콘텐츠 위치 */
+
+}
+/* 메인 이미지 */
+.main-image {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.main-image img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+/* 오버레이 텍스트 */
+.overlay-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #EDE1C4;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+}
+
+/* 배너 콘텐츠 */
+.banner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    color: #F2E8CF;
+    padding-top: 150px;
+    height: 500px;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    padding: 20px;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.description {
+    font-size: 1.5em;
+    line-height: 1.8;
+    padding: 0 20px;
+    color: #EDE1C4;
+}
+
+/* 콘텐츠 영역 
+.poker-content {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #2a2d2a;  기존 배경색 유지 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}*/
+
+/* 각 섹션 상자 스타일 */
+.section-box {
+    background-color: #3a3a3c; /* 상자 배경색 */
+    border: 1px solid #444; /* 상자 테두리 색상 */
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.section-box h2 {
+    margin-top: 0;
+    color: #EDE1C4; /* 제목 색상 */
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.section-box ul {
+    padding-left: 20px;
+}
+
+.section-box ul li {
+    margin-bottom: 10px;
+    color: #f5f5f7; /* 항목 색상 */
+}
+
+.section-box p {
+    color: #f5f5f7; /* 본문 텍스트 색상 */
+}
+.section-box img {
+    max-width: 120px;
+    padding: 10px 0px 10px 10px;
+}
+.poker-example-ext{
+    opacity: 0.6;
+    filter: brightness(0.4);
+}
+/* 반응형 디자인 (디스플레이 크기에 따라 스타일 변경) */
+/* 반응형 디자인 추가 */
+
+/* 1200px 이하 화면 (태블릿) */
+@media (max-width: 1200px) {
+    /* 오버레이 텍스트 */
+    /*.overlay-text {
+        font-size: 1.8em;  폰트 크기 축소 */
+       /* padding: 15px;  패딩 축소 
+    }*/
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1.5em; /* 폰트 크기 축소 */
+        padding: 10px 15px;  /*패딩 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 5px;
+        max-width: 60px; /* 로고 크기 축소 */
+    }
+}
+
+/* 반응형 디자인 (디스플레이 크기에 따라 스타일 변경) */
+/* 반응형 디자인 추가 */
+/* 1200px 이하 화면 */
+@media (max-width: 1200px) {
+    /* 오버레이 텍스트 */
+    /*.overlay-text {
+        font-size: 1.8em;  폰트 크기 축소 */
+       /* padding: 15px;  패딩 축소 
+    }*/
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1.5em; /* 폰트 크기 축소 */
+        padding: 10px 15px;  /*패딩 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 5px;
+        max-width: 60px; /* 로고 크기 축소 */
+    }
+}
+
+/* 768px 이하 화면 (작은 태블릿 및 큰 모바일) */
+@media (max-width: 768px) {
+    /* 오버레이 텍스트 */
+    .overlay-text {
+        font-size: 1.2em; /* 폰트 크기 더 축소 */
+        padding: 12px;  /*패딩 축소*/
+    } 
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1.2em; /* 폰트 크기 축소 */
+        padding: 8px 2px;  /*패딩 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 10px;
+        max-width: 50px;  /*로고 크기 더 축소 */
+    }
+    .page-logo {
+    left: 10px; /* 왼쪽 여백 설정 */
+    }
+}
+.imo {font-size: 90px;}
+
+/* 480px 이하 화면 (스마트폰) */
+@media (max-width: 480px) {
+    /* 오버레이 텍스트 */
+    .overlay-text {
+        font-size: 1.2em; /* 폰트 크기 더 축소 */
+        padding: 10px; /* 패딩 더 축소 */
+    }
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1em; /* 폰트 크기 더 축소 */
+        padding: 5px 8px;  /*패딩 더 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 10px;
+        max-width: 50px; /* 로고 크기 더 축소 */
+    }
+    .page-logo {
+    left: 10px; /* 왼쪽 여백 설정 */
+    }
+}

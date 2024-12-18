@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <br><br><br><br><br><br><br><br><br><br><br> <title>Yahtzee 점수 항목 추천</title>
+    <link rel="stylesheet" href="../css/dice simul.css">
+    <link rel="stylesheet" href="../css/dicedt.css">
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: Arial, sans-serif;
+            /*margin: 20px;*/
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            width: 80px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 50px;
+            text-align: center;
+            margin-left: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-logo">
+        <a href="../main_pages/mainVer1.html">
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+    <!-- 내비게이션 바 -->
+    <nav class="navbar">
+        <ul>
+            <li class="nav-item">
+                <a href="../main_pages/dice.html">야추다이스</a>
+                <div class="dropdown">
+                    <a href="../pages/dice-rules.html">게임 설명</a>
+                    <a href="../pages/dice-strategy.html">게임 룰</a>
+                    <a href="../pages/dice-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/poker.html">포커</a>
+                <div class="dropdown">
+                    <a href="../pages/poker-rules.html">게임 설명</a>
+                    <a href="../pages/poker-strategy.html">게임 룰</a>
+                    <a href="../pages/poker-hands.html">게임 족보</a>
+                    <a href="../pages/poker-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/blackjack.html">블랙잭</a>
+                <div class="dropdown">
+                    <a href="../pages/blackjack-rules.html">게임 설명</a>
+                    <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                    <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/mahjong.html">마작</a>
+                <div class="dropdown">
+                    <a href="../pages/mahjong-rules.html">게임 설명</a>
+                    <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                    <a href="../pages/mahjong-hands.html">게임 족보</a>
+                    <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 메인 이미지 -->
+    <!-- 양쪽 배경 이미지 -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+    <h1>Yahtzee 점수 항목 추천</h1>
+    <!-- 주사위 입력 폼 -->
+    <br><br><br><br><br>
+    <form id="dice-form">
+        <div class="input-group">
+            <label for="dice1">주사위 1:</label>
+            <input type="number" id="dice1" min="1" max="6" required inputmode="numeric" pattern="[0-9]*">
+        </div>
+        <div class="input-group">
+            <label for="dice2">주사위 2:</label>
+            <input type="number" id="dice2" min="1" max="6" required inputmode="numeric" pattern="[0-9]*">
+        </div>
+        <div class="input-group">
+            <label for="dice3">주사위 3:</label>
+            <input type="number" id="dice3" min="1" max="6" required inputmode="numeric" pattern="[0-9]*">
+        </div>
+        <div class="input-group">
+            <label for="dice4">주사위 4:</label>
+            <input type="number" id="dice4" min="1" max="6" required inputmode="numeric" pattern="[0-9]*">
+        </div>
+        <div class="input-group">
+            <label for="dice5">주사위 5:</label>
+            <input type="number" id="dice5" min="1" max="6" required inputmode="numeric" pattern="[0-9]*">
+        </div>
+        <button type="button" onclick="recommendScores()">추천 항목 보기</button>
+        <p id="error-message" class="error"></p>
+    </form>
+
+    <h2>추천 점수 항목</h2>
+    <!-- 추천 점수 항목을 나열할 리스트 -->
+    <ul id="score-list"></ul>
+
+    <script>
+        // 점수 항목 추천 함수
+        function recommendScores() {
+            const errorMessage = document.getElementById("error-message");
+            errorMessage.innerText = ""; // 이전 오류 메시지 초기화
+
+            // 입력한 주사위 값 가져오기
+            const dice = [
+                parseInt(document.getElementById("dice1").value),
+                parseInt(document.getElementById("dice2").value),
+                parseInt(document.getElementById("dice3").value),
+                parseInt(document.getElementById("dice4").value),
+                parseInt(document.getElementById("dice5").value)
+            ];
+
+            // 유효성 검사: 값이 없거나 범위를 벗어난 경우 오류 처리
+            if (dice.some(d => isNaN(d))) {
+                errorMessage.innerText = "모든 주사위 값을 입력해야 합니다.";
+                return;
+            }
+            if (dice.some(d => d < 1 || d > 6)) {
+                errorMessage.innerText = "주사위 값은 1에서 6 사이여야 합니다.";
+                return;
+            }
+
+            // 추천할 점수 항목을 저장할 배열
+            const recommendations = [];
+
+            // 주사위 값의 빈도 계산
+            const counts = dice.reduce((acc, d) => {
+                acc[d] = (acc[d] || 0) + 1;
+                return acc;
+            }, {});
+
+            const countsValues = Object.values(counts);
+
+            // Full House: 3개의 동일한 값과 2개의 동일한 값이 있을 경우
+            if (countsValues.includes(3) && countsValues.includes(2)) {
+                recommendations.push("Full House: 25점");
+            }
+
+            // Yahtzee: 5개의 동일한 값이 있을 경우
+            if (countsValues.includes(5)) {
+                recommendations.push("Yahtzee: 50점");
+            }
+
+            // Four of a Kind: 4개 이상의 동일한 값이 있을 경우
+            if (countsValues.some(count => count >= 4)) {
+                recommendations.push("Four of a Kind: 주사위의 합");
+            }
+
+            // Small Straight: 연속된 4개의 숫자가 있을 경우
+            const straights = [
+                [1, 2, 3, 4],
+                [2, 3, 4, 5],
+                [3, 4, 5, 6]
+            ];
+            if (straights.some(s => s.every(v => dice.includes(v)))) {
+                recommendations.push("Small Straight: 30점");
+            }
+
+            // Large Straight: 연속된 5개의 숫자가 있을 경우
+            if ([1, 2, 3, 4, 5].every(v => dice.includes(v)) || [2, 3, 4, 5, 6].every(v => dice.includes(v))) {
+                recommendations.push("Large Straight: 40점");
+            }
+
+            // Chance: 주사위의 모든 값을 합산한 값
+            recommendations.push("Chance: " + dice.reduce((a, b) => a + b, 0) + "점");
+
+            // 추천 항목 출력
+            const scoreList = document.getElementById("score-list");
+            scoreList.innerHTML = ""; // 이전 항목 초기화
+            if (recommendations.length === 0) {
+                scoreList.innerHTML = "<li>추천할 점수가 없습니다. 더 좋은 결과를 위해 주사위를 다시 던져 보세요!</li>";
+            } else {
+                recommendations.forEach(item => {
+                    const li = document.createElement("li");
+                    li.innerText = item;
+                    scoreList.appendChild(li);
+                });
+            }
+        }
+    </script>
+   <script src="../js/main.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

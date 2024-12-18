@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마작 게임 설명</title>
+    <link rel="stylesheet" href="../css/mjrcss.css">
+</head>
+
+<body>
+    <div class="page-logo">
+        <a href="../main_pages/mainVer1.html">
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+     <!-- 내비게이션 바 -->
+    <nav class="navbar">
+        <ul>
+            <li class="nav-item">
+                <a href="../main_pages/dice.html">야추다이스</a>
+                <div class="dropdown">
+                    <a href="../pages/dice-rules.html">게임 설명</a>
+                    <a href="../pages/dice-strategy.html">게임 룰</a>
+                    <a href="../pages/dice-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/poker.html">포커</a>
+                <div class="dropdown">
+                    <a href="../pages/poker-rules.html">게임 설명</a>
+                    <a href="../pages/poker-strategy.html">게임 룰</a>
+                    <a href="../pages/poker-hands.html">게임 족보</a>
+                    <a href="../pages/poker-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/blackjack.html">블랙잭</a>
+                <div class="dropdown">
+                    <a href="../pages/blackjack-rules.html">게임 설명</a>
+                    <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                    <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/mahjong.html">마작</a>
+                <div class="dropdown">
+                    <a href="../pages/mahjong-rules.html">게임 설명</a>
+                    <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                    <a href="../pages/mahjong-hands.html">게임 족보</a>
+                    <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- 메인 이미지 -->
+    <!-- 양쪽 배경 이미지 -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+    <div class="main-content">
+        <div class="banner">
+            <p class="description">
+                <div class="mahjong-content">
+                    <h1>리치 마작 족보</h1>
+                    <!--<h2>1판</h2>-->
+                    <div class="section-box">
+                        <h2>1판</h2>
+                        <div class="mahjong-tiles">
+                            <h2>리치</h2>
+                            <img src="../media/m1.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>멘젠 상태에서 텐파이 시 1000점을 지불해 선언 가능.</p>
+                    </div>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>탕야오 (단요구)</h2>
+                            <img src="../media/m2.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>요구패(1,9,풍패,삼원패)를 사용하지 않고 화료..</p>
+                    </div>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>멘젠 쯔모 (문전청자모화)</h2>
+                            <img src="../media/m3.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>멘젠 상태에서 패를 쯔모(드로우)하여 화료.</p>
+                    </div>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>역패: 자풍패 (동/남/서/북)</h2>
+                            <img src="../media/m4.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>자신의 위치와 동일한 풍패를 커쯔(3개같은모양)로 만들어 화료</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>역패: 장풍패 (동/남/서/북)</h2>
+                            <img src="../media/m5.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>장풍과 같은 패일 때 (동풍전일때 동)장풍과 같은 방향의 풍패를 커쯔(3개같은모양)로 만들어 화료</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>역패: 삼원패 (백/발/중)</h2>
+                            <img src="../media/m6.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>삼원패(백/발/중) 중 하나를 커쯔(3개같은모양)로 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>핑후 (평화)</h2>
+                            <img src="../media/m7.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>숫자패, 객풍으로 머리를 만들고 슌쯔를 4쌍 만든 뒤,대기 패를 머리가 아닌 슌쯔로만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>이페코 (일배구)</h2>
+                            <img src="../media/m8.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>같은 종류, 같은 숫자의 연속이
+                            2회인 상태에서 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>창깡 (창공)</h2>
+                            <img src="../media/m9.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>다른 플레이어가 소명깡을 했을 때
+                            해당 패가 자신 패의 화료 패일 경우
+                            깡을 취소하고 론으로 성립.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>영상개화 (린샹카이호)</h2>
+                            <img src="../media/m10.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>깡을 하거나 북도라 선언 후
+                            가져오는 패(영상패)로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>해저로월</h2>
+                            <img src="../media/m11..png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>해당 국의 마지막 패를 가져와서
+                            쯔모화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>하저로어</h2>
+                            <img src="../media/m12.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>해당 국의 마지막 패로
+                            론 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>일발</h2>
+                            <img src="../media/m13.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>리치 이후 누구든
+                            울지 않고 (치,퐁,깡 선언)
+                            1턴 이내 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 츠바메가에시</h2>
+                            <img src="../media/m14.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>다른 플레이어가 리치 선언 후
+                            버림패를 론으로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 영상개론</h2>
+                            <img src="../media/m14-1.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>다른 플레이어가 깡 선언 직후
+                            버림패를 론으로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 십이낙태</h2>
+                            <img src="../media/m15.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>4번 치-,퐁,깡 이후
+                            단기 대기로
+                            론 혹은 쯔모로 화료.</p>
+                    </div>
+                </div>
+            </p>
+
+            <p class="description">
+                <div class="mahjong-content">
+                    <h2>2판</h2>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>더블 리치</h2>
+                            <img src="../media/m21.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>아무도 치-,퐁,깡을 선언하지
+                            않았을 때 1턴에 리치를 선언.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>삼색동각</h2>
+                            <img src="../media/m22.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>만수패, 삭수패, 통수패를
+                            각각 같은 숫자로 커쯔나
+                            깡으로 만들면 성립.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>산깡쯔 (삼공자)</h2>
+                            <img src="../media/m23.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>깡을 3번하고 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>또이또이</h2>
+                            <img src="../media/m24.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>커쯔를 4쌍 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>산안커</h2>
+                            <img src="../media/m25.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>안커(퐁하지 않고 만든 커쯔)를
+                            3쌍 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>소삼원</h2>
+                            <img src="../media/m26.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>백,발,중 중에 두 종류를 커쯔
+                            한 종류를 또이쯔로 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>혼노두 (혼로토)</h2>
+                            <img src="../media/m27.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>1,9,자패만으로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>치또이 (칠대자)</h2>
+                            <img src="../media/m28.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 또이쯔 (동일패 2개)를
+                            7쌍 모으면 성립.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>챤타 (혼전대요구)</h2>
+                            <img src="../media/m29.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠일시 1판 감소) 몸통과 머리에 모두
+                            요구패(1,9,풍패,삼원패)가
+                            있으면 성립.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>일기통관</h2>
+                            <img src="../media/m210.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(후로 시 1판 감소) 한 가지 종류의 패로
+                            123/456/789를 
+                            모두 모으면 성립. </p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>삼색동순</h2>
+                            <img src="../media/m211.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(후로 시 1판 감소) 만수패, 삭수패, 통수패를
+                            각각 같은 숫자로 슌쯔를
+                            만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 오문제</h2>
+                            <img src="../media/m212.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>만수,통수,삭수,풍패,삼원패를
+                            모두 사용하여 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 삼련각</h2>
+                            <img src="../media/m213.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>연속된 커쯔를
+                            3개 만들면 성립.</p>
+                    </div>
+                </div>
+            </p>
+
+            <p class="description">
+                <div class="mahjong-content">
+                    <h2>3판</h2>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>량페코 (이배구)</h2>
+                            <img src="../media/m31.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 이페코를 2쌍으로 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>준챤타 (순전대요구)</h2>
+                            <img src="../media/m32.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>머리와 몸통에 모두 노두패(1,9)가
+                            포함되어 있는 상태에서 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>혼일색</h2>
+                            <img src="../media/m33.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(후로 시 1판 감소) 한 종류의 수패와
+                            자패만으로 이뤄지면 성립.</p>
+                    </div>
+
+                </div>
+            </p>
+
+            <p class="description">
+                <div class="mahjong-content">
+                    <h2>6판</h2>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>청일색</h2>
+                            <img src="../media/m61.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(후로 시 1판 감소) 한 종류의 수패 (통,삭,만)로만
+                            화료할 시 성립.</p>
+                    </div>
+                </div>
+            </p>
+
+            <p class="description">
+                <div class="mahjong-content">
+                    <h2>만관</h2>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>유국만관</h2>
+                            <img src="../media/mm1.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>유국 시, 자신의 버림 패가
+                            모두 요구패면 성립.</p>
+                    </div>
+                    
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 일통로월
+                                (5판)</h2>
+                            <img src="../media/mm2.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>해저로월을 1통으로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 구통로어
+                                (5판)</h2>
+                            <img src="../media/mm3.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>하저로어를 9통으로 화료.</p>
+                    </div>
+
+                </div>
+            </p>
+
+            <p class="description">
+                <div class="mahjong-content">
+                    <h2>역만</h2>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>천화</h2>
+                            <img src="../media/w1.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(오야 한정) 첫 플레이어가 첫 패로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>지화</h2>
+                            <img src="../media/w2.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(자 한정) 첫 턴에 치,퐁,깡 없이
+                            플레이어가 첫 패로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>대삼원</h2>
+                            <img src="../media/w3.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>백/발/중 3종류의 패를
+                            모두 몸통으로 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>쓰안커 (사암각)</h2>
+                            <img src="../media/w4.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 안커(퐁하지 않고 만든 커쯔)
+                            4쌍을 만든 뒤 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>자일색</h2>
+                            <img src="../media/w5.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>자패만으로 역을 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>녹일색</h2>
+                            <img src="../media/w6.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>2삭,3삭,4삭,
+                            6삭,8삭,발패만으로
+                            화료.
+                            
+                            (발패는 필수가 아닙니다.)</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>청노두 (친로토)</h2>
+                            <img src="../media/w7.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>노두패 (1,9)만으로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>국사무쌍</h2>
+                            <img src="../media/w8.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>모든 1,9, 자패를 13종 갖추고
+                            그 중 하나를 또이쯔로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>소사희
+                            </h2>
+                            <img src="../media/w9.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>동남서북 중 세개를 커쯔,
+                            남은 하나를 또이쯔로 만들고
+                            화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>쓰깡쯔 (사공자)</h2>
+                            <img src="../media/w10.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>깡을 4번 하고 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>구련보등</h2>
+                            <img src="../media/w11.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 만,통,삭 중 하나로
+                            1112345678999+X의
+                            형태를 갖추면 성립.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 인화</h2>
+                            <img src="../media/w12.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 자신이 자일 때
+                            순정 1순으로 론 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 대차륜</h2>
+                            <img src="../media/w13.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 2~8의 통수패 만으로
+                            치또이를 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 대죽림</h2>
+                            <img src="../media/w14.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 2~8의 삭수패 만으로
+                            치또이를 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 대수린</h2>
+                            <img src="../media/w15.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 2~8의 만수패 만으로
+                            치또이를 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 돌 위에서 삼년</h2>
+                            <img src="../media/w16.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 더블 리치 상태로
+                            해저로월이나
+                            하저로어로 화료.</p>
+                    </div>
+                </div>
+            </p>
+
+            <p class="description">
+                <div class="mahjong-content">
+                    <h2>더블 역만</h2>
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>쓰안커 단기 (사암각 단기)</h2>
+                            <img src="../media/d1.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 쓰안커를 단기 대기로 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>국사무쌍 13면 대기</h2>
+                            <img src="../media/d2.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 국사무쌍을 13면
+                            대기 형태로 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>구련보등 9면 대기</h2>
+                            <img src="../media/d3.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 구련보등을 9면 대기
+                            형태로 만들면 성립.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>대사희
+                            </h2>
+                            <img src="../media/d4.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>동남서북 4개를
+                            모두 커쯔로 만들어 화료.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="mahjong-tiles">
+                            <h2>로컬역 : 대칠성</h2>
+                            <img src="../media/d5.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>(멘젠 한정) 자패 7쌍을 치또이 형태로
+                            만들어 화료.</p>
+                    </div>
+
+                </div>
+            </p>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

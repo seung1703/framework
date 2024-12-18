@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블랙잭 시뮬레이션</title>
+    <link rel="stylesheet" href="../css/blackstyles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #2E8B57;
+            color: #EDE1C4;;
+            margin: 0;
+            padding: 0;
+        }
+
+        #game {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #2B3D34;
+            border-radius: 10px;
+            border: 2px solid black;
+            text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+        }
+
+        .hand {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border: 2px solid black;
+            color: #0e0a01;;
+           
+        }
+
+        button:hover {
+            background-color: #cccccc;
+        }
+
+        button:disabled {
+            background-color: #888888;
+            cursor: not-allowed;
+        }
+
+        #hit-button {
+            background-color: #1E90FF;
+            color: white;
+        }
+
+        #stand-button {
+            background-color: #DC143C;
+            color: white;
+        }
+
+        #message {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #turn {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #FFD700;
+        }
+
+        #instructions {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #FFFFFF;
+        }
+        .main-content{padding-top: 150px;}
+    </style>
+</head>
+<body>
+    <!-- 내비게이션 바 -->
+     <!-- 로고 -->
+     <div class="page-logo">
+        <a href="../main_pages/mainVer1.html"> <!-- 링크를 mainVer1.html로 수정 -->
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+    <!-- 내비게이션 바 -->
+    <nav class="navbar">
+    <ul>
+        <li class="nav-item">
+            <a href="../main_pages/dice.html">야추다이스</a>
+            <div class="dropdown">
+                <a href="../pages/dice-rules.html">게임 설명</a>
+                <a href="../pages/dice-strategy.html">게임 룰</a>
+                <a href="../pages/dice-simul.html">시뮬레이션</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="../main_pages/poker.html">포커</a>
+            <div class="dropdown">
+                <a href="../pages/poker-rules.html">게임 설명</a>
+                <a href="../pages/poker-strategy.html">게임 룰</a>
+                <a href="../pages/poker-hands.html">게임 족보</a>
+                <a href="../pages/poker-simul.html">시뮬레이션</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="../main_pages/blackjack.html">블랙잭</a>
+            <div class="dropdown">
+                <a href="../pages/blackjack-rules.html">게임 설명</a>
+                <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="../main_pages/mahjong.html">마작</a>
+            <div class="dropdown">
+                <a href="../pages/mahjong-rules.html">게임 설명</a>
+                <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                <a href="../pages/mahjong-hands.html">게임 족보</a>
+                <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<div class="background-left"></div>
+<div class="background-right"></div>
+<div class="main-content">
+            <h1>블랙잭</h1>
+            <div id="dealer-hand" class="hand">
+                <h2>딜러의 카드</h2>
+                <div id="dealer-cards"></div>
+                <div id="dealer-score"></div>
+            </div>
+            <div id="player-hand" class="hand">
+                <h2>플레이어의 카드</h2>
+                <div id="player-cards"></div>
+                <div id="player-score"></div>
+            </div>
+            <div id="controls">
+                <button id="hit-button">히트</button>
+                <button id="stand-button">스탠드</button>
+                <button id="restart-button" style="display: none;" onclick="location.reload()">다시 시작</button>
+            </div>
+            
+            <div id="message"></div>
+            <div id="turn"></div>
+            <div id="instructions">
+                <p><strong>히트</strong>: 카드를 한 장 더 받습니다.</p>
+                <p><strong>스탠드</strong>: 더 이상 카드를 받지 않고 현재 점수로 게임을 계속합니다.</p>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                let deck = createDeck();
+                let dealerHand = [];
+                let playerHand = [];
+                let dealerScore = 0;
+                let playerScore = 0;
+                let currentPlayer = '플레이어';
+    
+                function createDeck() {
+                    const suits = ['♠', '♥', '♣', '♦'];
+                    const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+                    const deck = [];
+                    for (const suit of suits) {
+                        for (const value of values) {
+                            deck.push({ value, suit });
+                        }
+                    }
+                    return deck;
+                }
+    
+                function shuffleDeck(deck) {
+                    for (let i = deck.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [deck[i], deck[j]] = [deck[j], deck[i]];
+                    }
+                    return deck;
+                }
+    
+                function dealCard(hand) {
+                    const card = deck.pop();
+                    hand.push(card);
+                    return card;
+                }
+    
+                function calculateScore(hand) {
+                    let score = 0;
+                    let hasAce = false;
+                    for (const card of hand) {
+                        if (card.value === 'A') {
+                            hasAce = true;
+                            score += 11;
+                        } else if (['K', 'Q', 'J'].includes(card.value)) {
+                            score += 10;
+                        } else {
+                            score += parseInt(card.value);
+                        }
+                    }
+                    if (score > 21 && hasAce) {
+                        score -= 10;
+                    }
+                    return score;
+                }
+    
+                function renderGame() {
+                    document.getElementById('dealer-cards').innerHTML = dealerHand.map(card => `${card.value}${card.suit}`).join(', ');
+                    document.getElementById('player-cards').innerHTML = playerHand.map(card => `${card.value}${card.suit}`).join(', ');
+                    dealerScore = calculateScore(dealerHand);
+                    playerScore = calculateScore(playerHand);
+                    document.getElementById('dealer-score').textContent = `점수: ${dealerScore}`;
+                    document.getElementById('player-score').textContent = `점수: ${playerScore}`;
+                    if (currentPlayer) {
+                        document.getElementById('turn').textContent = `현재 차례: ${currentPlayer}`;
+                    } else {
+                        document.getElementById('turn').textContent = '';
+                    }
+    
+                    if (playerScore > 21) {
+                        document.getElementById('message').textContent = '플레이어 버스트! 딜러 승리!';
+                        endGame();
+                    } else if (dealerScore > 21) {
+                        document.getElementById('message').textContent = '딜러 버스트! 플레이어 승리!';
+                        endGame();
+                    } else if (playerScore === 21 && playerHand.length === 2) {
+                        document.getElementById('message').textContent = '플레이어 블랙잭! 플레이어 승리!';
+                        endGame();
+                    } else if (dealerScore === 21 && dealerHand.length === 2) {
+                        document.getElementById('message').textContent = '딜러 블랙잭! 딜러 승리!';
+                        endGame();
+                    } else if (playerStand && dealerStand) {
+                        if (playerScore > dealerScore) {
+                            document.getElementById('message').textContent = '플레이어 승리!';
+                        } else if (playerScore < dealerScore) {
+                            document.getElementById('message').textContent = '딜러 승리!';
+                        } else {
+                            document.getElementById('message').textContent = '무승부!';
+                        }
+                        endGame();
+                    }
+                }
+    
+                function startGame() {
+                    deck = shuffleDeck(createDeck());
+                    dealerHand = [];
+                    playerHand = [];
+                    playerStand = false;
+                    dealerStand = false;
+                    for (let i = 0; i < 2; i++) {
+                        dealCard(dealerHand);
+                        dealCard(playerHand);
+                    }
+                    currentPlayer = '플레이어';
+                    renderGame();
+                    document.getElementById('message').textContent = '';
+                    document.getElementById('hit-button').style.display = 'inline-block';
+                    document.getElementById('stand-button').style.display = 'inline-block';
+                    document.getElementById('restart-button').style.display = 'none';
+                }
+    
+                function endGame() {
+                    document.getElementById('hit-button').style.display = 'none';
+                    document.getElementById('stand-button').style.display = 'none';
+                    currentPlayer = null;
+                    document.getElementById('turn').textContent = '';
+                    document.getElementById('restart-button').style.display = 'inline-block';
+    
+                }
+    
+                function playerTurn() {
+                    currentPlayer = '플레이어';
+                    document.getElementById('hit-button').style.display = 'inline-block'; //이게플레이어보다위에있으면 차례 안넘어가나
+                    document.getElementById('stand-button').style.display = 'inline-block';
+                    document.getElementById('hit-button').disabled = false;
+                    document.getElementById('stand-button').disabled = false;
+                    renderGame();
+                }
+    
+                function dealerTurn() {
+                    currentPlayer = '딜러';
+                    document.getElementById('hit-button').style.display = 'none';
+                    document.getElementById('stand-button').style.display = 'none';
+                    document.getElementById('hit-button').disabled = true;
+                    document.getElementById('stand-button').disabled = true;
+                    renderGame();
+                    setTimeout(() => {
+                        if (calculateScore(dealerHand) < 17) {
+                            dealCard(dealerHand);
+                            renderGame();
+                            setTimeout(dealerTurn, 1000);
+                        } else {
+                            dealerStand = true;
+                            if (playerStand) {
+                                renderGame();
+                            } else {
+                                playerTurn();
+                            }
+                        }
+                    }, 1000);
+                }
+    
+                document.getElementById('hit-button').addEventListener('click', () => {
+                    dealCard(playerHand);
+                    renderGame();
+                    if (playerScore < 21) {
+                        setTimeout(dealerTurn, 1000);
+                    }
+                });
+    
+                document.getElementById('stand-button').addEventListener('click', () => {
+                    playerStand = true;
+                    setTimeout(dealerTurn, 1000);
+                });
+    
+                window.addEventListener('load', startGame);
+            });
+        </script>
+        <script src="../js/main.js"></script>
+    </body>
+    </html>

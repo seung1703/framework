@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>야추 다이스 게임 설명</title>
+    <link rel="stylesheet" href="../css/dicedt.css">
+</head>
+
+<body>
+    <div class="page-logo">
+        <a href="../main_pages/mainVer1.html">
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+     <!-- 내비게이션 바 -->
+    <nav class="navbar">
+        <ul>
+            <li class="nav-item">
+                <a href="../main_pages/dice.html">야추다이스</a>
+                <div class="dropdown">
+                    <a href="../pages/dice-rules.html">게임 설명</a>
+                    <a href="../pages/dice-strategy.html">게임 룰</a>
+                    <a href="../pages/dice-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/poker.html">포커</a>
+                <div class="dropdown">
+                    <a href="../pages/poker-rules.html">게임 설명</a>
+                    <a href="../pages/poker-strategy.html">게임 룰</a>
+                    <a href="../pages/poker-hands.html">게임 족보</a>
+                    <a href="../pages/poker-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/blackjack.html">블랙잭</a>
+                <div class="dropdown">
+                    <a href="../pages/blackjack-rules.html">게임 설명</a>
+                    <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                    <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/mahjong.html">마작</a>
+                <div class="dropdown">
+                    <a href="../pages/mahjong-rules.html">게임 설명</a>
+                    <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                    <a href="../pages/mahjong-hands.html">게임 족보</a>
+                    <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 메인 이미지 -->
+    <!-- 양쪽 배경 이미지 -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+    <div class="main-content">
+        <div class="banner">
+            <p class="description">
+                <div class="yacht dice-content">
+                    <h1>야추 다이스 규칙 설명</h1>
+                    <div class="section-box">
+                        <h2>야추 다이스의 게임 규칙</h2>
+                        <p>자신의 차례가 되면 주사위를 던질 수 있습니다. 5개의 주사위를 최대 3번 던질 수 있으며 첫 번째와 두 번째 주사위를 던질 때 마음에 드는 주사위를 고정하고 남은 주사위를 다시 던질 수 있습니다.그렇게 만든 주사위 조합으로 여러 점수 항목들을 채워 넣어 가장 높은 점수를 얻는 플레이어가 승리합니다. 게임은 점수 항목을 전부 채워 넣을 때까지 진행하고 나온 주사위의 조합이 아무 점수 항목도 충족하지 못한다면 아무 점수 항목을 0으로 채우고 턴을 끝낼 수 있습니다.</p>
+                    </div>
+
+                    <div class="section-box">
+                        <h2>야추 다이스의 점수 항목</h2>
+                        <p>
+                            <img src="../media/yd1.png" alt="야추 다이스 점수 항목 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                            Aces: 주사위 중 '1'이 나온 개수만큼 점수를 얻습니다. 예: 1, 1, 1이면 3점.<br>
+                            Twos: 주사위 중 '2'가 나온 개수만큼 점수를 얻습니다.<br>
+                            Threes: 주사위 중 '3'이 나온 개수만큼 점수를 얻습니다.<br>
+                            Fours: 주사위 중 '4'가 나온 개수만큼 점수를 얻습니다.<br>
+                            Fives: 주사위 중 '5'가 나온 개수만큼 점수를 얻습니다.<br>
+                            sixes: 주사위 중 '6'이 나온 개수만큼 점수를 얻습니다.<br>
+                            Bonus: 상단 항목에서 합이 63점을 넘을 경우 35점을 추가로 얻습니다.<br>
+                        </p>
+                    </div>
+
+
+                    <div class="section-box">
+                        <h2>야추 다이스의 점수 항목</h2>
+                        <p>
+                            <img src="../media/yd2.png" alt="야추 다이스 점수 항목 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                            choice: 주사위에 나온 숫자의 총합을 그대로 점수로 얻습니다.<br>
+                            Four of a Kind: 주사위 4개의 눈이 동일할 때, 주사위 5개의 합을 점수로 얻습니다.<br>
+                            Full House: 눈이 동일한 주사위가 각각 3개와 2개가 있을 때, 25점을 얻습니다.<br>
+                            Small Straight: 주사위 눈 4개가 연속으로 이어질 때, 30점을 얻습니다.<br>
+                            Large Straight: 주사위 눈 5개가 연속으로 이어질 때, 40점을 얻습니다.<br>
+                            Yacht: 주사위 5개의 눈이 모두 같을 때, 50점을 얻습니다.<br>
+                        </p>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

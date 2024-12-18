@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마작 게임 설명</title>
+    <link rel="stylesheet" href="../css/mjrcss.css">
+</head>
+
+<body>
+    <div class="page-logo">
+        <a href="../main_pages/mainVer1.html">
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+     <!-- 내비게이션 바 -->
+    <nav class="navbar">
+        <ul>
+            <li class="nav-item">
+                <a href="../main_pages/dice.html">야추다이스</a>
+                <div class="dropdown">
+                    <a href="../pages/dice-rules.html">게임 설명</a>
+                    <a href="../pages/dice-strategy.html">게임 룰</a>
+                    <a href="../pages/dice-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/poker.html">포커</a>
+                <div class="dropdown">
+                    <a href="../pages/poker-rules.html">게임 설명</a>
+                    <a href="../pages/poker-strategy.html">게임 룰</a>
+                    <a href="../pages/poker-hands.html">게임 족보</a>
+                    <a href="../pages/poker-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/blackjack.html">블랙잭</a>
+                <div class="dropdown">
+                    <a href="../pages/blackjack-rules.html">게임 설명</a>
+                    <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                    <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/mahjong.html">마작</a>
+                <div class="dropdown">
+                    <a href="../pages/mahjong-rules.html">게임 설명</a>
+                    <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                    <a href="../pages/mahjong-hands.html">게임 족보</a>
+                    <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- 메인 이미지 -->
+    <!-- 양쪽 배경 이미지 -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+    <div class="main-content">
+        <div class="banner">
+            <p class="description">
+                <div class="mahjong-content">
+                    <h1>마작 룰 설명</h1>
+                    <div class="section-box">
+                        <h2>마작의 진행 순서</h2>
+                        <p>쯔모: 자신의 차례가 되면 산에서 패 하나를 가져옵니다.</p>
+                        <p>기리: 자신의 패나 가져온 패 중에서 필요없는 패 하나를 버립니다.</p>               
+                        <p>화료: 최종 목표는 패 3개짜리 몸통 4개와, 패 2개짜리 머리 하나를 완성하는 것입니다.</p>
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>후로(울기)</h2>
+                        <p>치: 나의 왼쪽사람이 나의 슌쯔(스트레이트)페를 만드는 페를 완성시키는 패를 버릴 때 외치며 상대의 패를 가지고화 내패에서 용의 몸을 만듭니다 그후 패를 하나 버립니다</p>
+                        <P>퐁: 다른 사람들이 나 커쯔(트리플) 을 만들 수 있는 패를 버릴떄 외치며  상대가 버린 패를 가지고 와서 용의 몸을 만듭니다 그후 패하나 버립니다 퐁은 치와다른게 모든플레이어에게 가능합니다</P>
+                        <p>깡: 내가 같은 패 3장가지고있는상황에서 누군가 같은 패를 버릴 때 혹은 내가 같은패 4장은 한번에 다 가지고있을 때외치고 몸음 만드는 겁니다</p>
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>마작의 진행 횟수&방향 </h2>
+                        <p>진행 방향은 각자의 차례는 시계 반대방향으로 돌아갑니다.</p>
+                        <p>마작은 크게 동장/남장/서장/북장으로 나뉘고, 그 안쪽에서 1국/2국/3국/4국으로 다시 나뉩니다.</p>
+                        <p>4국씩 동남서북으로 총 16게임을 하는게 이본적이며 동장과 남장만 하는 '반장전'을 주로 합니다.  그리고 더 짧은 시합으로는 동장만 하는 '동풍전'도 있습니다.</p>
+                        <p>가장 일반적인 형태의 반장전의 경우 총 8국이 됩니다.</p>
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>마작의 승리 조건</h2>
+                        <p>1. 유국: 마작은 테이블 위에 있는 '산'(패를 쌓아놓은 것)에서 하나씩 가져와서 하나씩 '강'(버림패가 모이는 곳)에 버리는 게임입니다. 산에 있는 패가 모두 떨어지면 게임이 끝납니다. 이 시점까지 아무도 패를 완성하지 못했다면 그 판은 유국이 됩니다.</p>
+                        <p>2. 텐파이: '텐파이'는 패가 완성되기 직전 상태를 뜻합니다. 앞으로 패 하나만 들어오면 완성되는 상태입니다.</p>
+                        <p>3. 화료: 패가 완성되는 것을 '화료'한다고 합니다. 쉽게 말해서 끝내는겁니다. 화료에는 2가지 종류가 있습니다.</p>
+                        <p>쯔모:자기 차례에 뽑은 패로 완성되는 경우, 점수를 3명에게서 나눠 받습니다.</p>
+                        <p>론:누군가가 버린 패를 가져와 완성되는경우, 점수를 그 사람한테서 몰아 받습니다.</p>               
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>마작의 패 구성</h2>
+                        <!-- <p>마작의 패는 다음과 같습니다.</p> -->
+                        <!-- 이미지 추가 -->
+                        <div class="mahjong-tiles">
+                            <img src="../media/mjp2.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>위 이미지는 일반적인 마작 패의 구성입니다. 몸은 슌쯔 코쯔로 이루어져있고 머리는 또이 입니다</p>
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>마작의 패 종류</h2>
+                        <!-- <p>마작의 패는 다음과 같습니다.</p> -->
+                        <!-- 이미지 추가 -->
+                        <div class="mahjong-tiles">
+                            <img src="../media/mjp.png" alt="마작 패 설명 이미지" style="width:100%; max-width:600px; display:block; margin:20px auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+                        </div>
+                        <p>위 이미지는 일반적인 마작 패의 구성입니다. 만수패, 삭수패, 통수패, 자패로 이루어져 있습니다.</p>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* 한글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Gowun+Dodum&family=Oswald:wght@200..700&display=swap');
+
+body {
+    font-family: 'Gowun Dodum', sans-serif; /* 기본 폰트 */
+    margin: 0;
+    padding: 0;
+    color: #333; /* 텍스트 색상 */
+}
+
+header {
+    padding: 10px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    background-size: cover;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+/* 게임 선택 섹션 */
+.game-selection {
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.game-selection h2 {
+    font-size: 24px;
+    font-family: 'Do Hyeon', sans-serif;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.game-selection button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 15px 25px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.game-selection button:hover {
+    background-color: #ffa500;
+    transform: scale(1.05); /* 살짝 확대 효과 */
+}
+
+.game-selection button:active {
+    background-color: #ff8c00;
+    transform: scale(1); /* 클릭 시 원래 크기로 */
+}
+
+/* 족보 선택 섹션 */
+.user-choice {
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.user-choice h2 {
+    font-size: 24px;
+    font-family: 'Do Hyeon', sans-serif;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* 선택 박스 */
+.user-choice select {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 15px auto;
+    font-size: 16px;
+    font-family: 'Edu AU VIC WA NT Pre', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.user-choice select:focus {
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+}
+
+/* 결과 확인 버튼 */
+.user-choice button {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.user-choice button:hover {
+    background-color: #ffa500;
+    transform: scale(1.05);
+}
+
+.user-choice button:active {
+    background-color: #ff8c00;
+    transform: scale(1);
+}
+
+.r-box{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 추가 */
+    border-radius: 8px; /* 텍스트 박스의 둥근 모서리 처리 */
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블랙잭</title>
+    <link rel="stylesheet" href="../css/bjmain.css">
+</head>
+<body>
+    <!-- 로고 -->
+    <div class="page-logo">
+        <a href="../main_pages/mainVer1.html"> <!-- 링크를 mainVer1.html로 수정 -->
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+    <!-- 내비게이션 바 -->
+    <nav class="navbar">
+        <ul>
+            <li class="nav-item">
+                <a href="./dice.html">야추다이스</a>
+                <div class="dropdown">
+                    <a href="../pages/dice-rules.html">게임 설명</a>
+                    <a href="../pages/dice-strategy.html">게임 룰</a>
+                    <a href="../pages/dice-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="./poker.html">포커</a>
+                <div class="dropdown">
+                    <a href="../pages/poker-rules.html">게임 설명</a>
+                    <a href="../pages/poker-strategy.html">게임 룰</a>
+                    <a href="../pages/poker-hands.html">게임 족보</a>
+                    <a href="../pages/poker-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="./blackjack.html">블랙잭</a>
+                <div class="dropdown">
+                    <a href="../pages/blackjack-rules.html">게임 설명</a>
+                    <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                    <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="./mahjong.html">마작</a>
+                <div class="dropdown">
+                    <a href="../pages/mahjong-rules.html">게임 설명</a>
+                    <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                    <a href="../pages/mahjong-hands.html">게임 족보</a>
+                    <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 메인 이미지 -->
+    <!-- 양쪽 배경 이미지 -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+    <div class="main-cotent">
+    <div class="banner">
+        <h1 class="title"><span class="icon">♠️</span> BlackJack Game Overview</h1>
+        <p class="description">
+            블랙잭은 딜러를 상대로 21에 가까운 점수를 만드는 게임입니다.<br> 각 플레이어는 딜러와 경쟁하여 승리하기 위해 카드의 합이 21을 넘지 않도록 하면서 최대한 가깝게 만드는 것을 목표로 합니다.
+    </div>
+    <!-- 링크 섹션 -->
+<div class="game-gallery">
+    <div class="game-card">
+        <a href="../pages/blackjack-rules.html">
+            <div class="game-card-text">
+                <h5>게임 설명</h5>
+                <p>블랙잭의 기본 원리와 배경</p>
+            </div>
+        </a>
+    </div>
+    <div class="game-card">
+        <a href="../pages/blackjack-strategy.html">
+            <div class="game-card-text">
+                <h5>게임 룰</h5>
+                <p>게임 진행 방법과 전략적 요소</p>
+            </div>
+        </a>
+    </div>
+    <div class="game-card">
+        <a href="../pages/blackjack-simul.html">
+            <div class="game-card-text">
+                <h5>게임 시뮬레이터</h5>
+                <p>간단한 블랙잭 시뮬레이터</p>
+            </div>
+        </a>
+    </div>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

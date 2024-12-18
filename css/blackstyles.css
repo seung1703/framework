@@ -1,0 +1,218 @@
+/* 폰트 임포트 */
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Gowun+Dodum&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap');
+
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(160deg, #2a2d2a, #3b4039 70%, #2a2d2a);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #f5f5f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* 페이지 로고 */
+.page-logo {
+    position: absolute; /* 로고를 절대 위치로 배치 */
+    top: 20px; /* 상단 여백 설정 */
+    left: 20px; /* 왼쪽 여백 설정 */
+    z-index: 1000; /* 로고가 다른 요소 위에 표시되도록 설정 */
+}
+
+.page-logo img {
+    max-width: 250px; /* 로고 크기 제한 */
+    height: auto;
+    cursor: pointer; /* 클릭 가능한 느낌 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    position: fixed;
+}
+
+/* 내비게이션 바 */
+.navbar {
+    position: fixed; /* 화면 상단에 고정 */
+    top: 0; /* 상단 고정 위치 */
+    left: 0; /* 좌측 고정 */
+    width: 100%; /* 전체 너비 */
+    height: auto;
+    z-index: 900; /* 다른 요소 위로 올림 */
+    background-color: #004F2D; /* 배경색 */
+    text-align: center;
+    padding: 30px 0; /* 내비게이션 바 높이 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    margin-bottom: 60px;
+    display: block;
+}
+
+.navbar ul {
+    list-style: none; /* 기본 리스트 스타일 제거 */
+    display: flex; /* 항목들을 수평으로 배치 */
+    justify-content: center; /* 항목들을 수평 중앙 정렬 */
+    gap: 40px; /* 항목 간 간격 설정 */
+    margin: 0; /* 기본 여백 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+.nav-item {
+    position: relative; /* 드롭다운 메뉴를 위한 위치 설정 */
+}
+
+.navbar a {
+    color: #EDE1C4; /* 링크 색상 설정 */
+    text-decoration: none; /* 링크에 밑줄 제거 */
+    font-size: 1.8em;  /* 글씨 크기 확대 */
+    padding: 15px 20px;  /* 패딩을 더 주어 버튼 크기 키움 */
+    font-family: "Gowun Dodum", sans-serif; /* 한글 폰트 설정 */
+}
+
+.navbar a:hover {
+    color: #ff6a00; /* 호버 시 텍스트 색상 변경 */
+}
+
+/* 드롭다운 스타일 */
+.dropdown {
+    display: none; /* 기본적으로 드롭다운 메뉴 숨김 */
+    position: absolute; /* 드롭다운 메뉴의 절대 위치 설정 */
+    top: 100%; /* 내비게이션 항목 바로 아래에 위치 */
+    left: 0; /* 왼쪽으로 정렬 */
+    background-color: #3a3a3c; /* 드롭다운 배경 색상 설정 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+    border-radius: 4px; /* 테두리 둥글게 처리 */
+    padding: 10px 0; /* 패딩 설정 */
+    min-width: 160px; /* 최소 너비 설정 */
+    z-index: 1; /* 드롭다운 메뉴가 다른 요소 위에 표시되도록 설정 */
+}
+
+.dropdown a {
+    display: block; /* 각 항목을 블록 요소로 설정 */
+    padding: 10px 20px; /* 항목에 패딩 추가 */
+    color: #ffb74d; /* 텍스트 색상 설정 */
+    text-decoration: none; /* 링크에 밑줄 제거 */
+    font-size: 1em; /* 폰트 크기 설정 */
+}
+
+.dropdown a:hover {
+    color: #ff6a00; /* 호버 시 텍스트 색상 변경 */
+    background-color: #4a4a4c; /* 배경 색상 변경 */
+}
+
+.nav-item:hover .dropdown {
+    display: block; /* 마우스를 올리면 드롭다운 메뉴 표시 */
+}
+
+/* 내비게이션 바 여백 추가 */
+.navbar {
+    margin-bottom: 30px; /* 본문과의 간격 */
+}
+
+/* 배경 이미지 */
+.background-left,
+.background-right {
+    position: fixed; /* 고정된 배경 */
+    top: 0;
+    height: 100%; /* 화면 높이 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(5px); /* 어두운 배경 및 블러 효과 */
+    z-index: -1; /* 콘텐츠 뒤로 배치 */
+    opacity: 0.6;
+}
+
+.background-left {
+    left: 0;
+    width: 20%; /* 화면의 20% 차지 */
+    background-image: url('../media/bj.png'); /* 왼쪽 배경 이미지 */
+}
+
+.background-right {
+    right: 0;
+    width: 20%; /* 화면의 20% 차지 */
+    background-image: url('../media/bj.png'); /* 오른쪽 배경 이미지 */
+}
+
+/* 반응형 디자인 (디스플레이 크기에 따라 스타일 변경) */
+/* 반응형 디자인 추가 */
+
+/* 1200px 이하 화면 (태블릿) */
+@media (max-width: 1200px) {
+    /* 오버레이 텍스트 */
+    /*.overlay-text {
+        font-size: 1.8em;  폰트 크기 축소 */
+       /* padding: 15px;  패딩 축소 
+    }*/
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1.5em; /* 폰트 크기 축소 */
+        padding: 10px 15px;  /*패딩 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 5px;
+        max-width: 60px; /* 로고 크기 축소 */
+    }
+}
+
+/* 768px 이하 화면 (작은 태블릿 및 큰 모바일) */
+@media (max-width: 768px) {
+    /* 오버레이 텍스트 */
+    .overlay-text {
+        font-size: 1.2em; /* 폰트 크기 더 축소 */
+        padding: 12px;  /*패딩 축소*/
+    } 
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1.2em; /* 폰트 크기 축소 */
+        padding: 8px 2px;  /*패딩 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 10px;
+        max-width: 50px;  /*로고 크기 더 축소 */
+    }
+    .page-logo {
+    left: 10px; /* 왼쪽 여백 설정 */
+    }
+}
+
+/* 480px 이하 화면 (스마트폰) */
+@media (max-width: 480px) {
+    /* 오버레이 텍스트 */
+    .overlay-text {
+        font-size: 1.2em; /* 폰트 크기 더 축소 */
+        padding: 10px; /* 패딩 더 축소 */
+    }
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1em; /* 폰트 크기 더 축소 */
+        padding: 5px 8px;  /*패딩 더 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 10px;
+        max-width: 50px; /* 로고 크기 더 축소 */
+    }
+    .page-logo {
+    left: 10px; /* 왼쪽 여백 설정 */
+    }
+}

@@ -1,0 +1,355 @@
+/* 한글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Gowun+Dodum&family=Oswald:wght@200..700&display=swap');
+
+/* 영문 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap');
+
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Do Hyeon", sans-serif; /* 기본 한글 폰트 설정 */
+}
+
+/* HTML과 body 기본 설정 */
+html, body {
+    overflow-x: hidden; /* 수평 스크롤 방지 */
+    width: 100%;
+    height: 100%;
+}
+
+/* 본문 스타일 */
+body {
+    background-color: #2a2d2a; /* 배경색 */
+    color: #f5f5f7; /* 기본 글자색 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* 페이지 내 요소들 위치 조정을 위한 상대적 기준 설정 */
+}
+
+/* 페이지 로고 */
+.page-logo {
+    position: absolute; /* 로고를 절대 위치로 배치 */
+    top: 20px; /* 상단 여백 설정 */
+    left: 20px; /* 왼쪽 여백 설정 */
+    z-index: 1000; /* 로고가 다른 요소 위에 표시되도록 설정 */
+}
+
+/* 로고 이미지 스타일 */
+.page-logo img {
+    max-width: 250px; /* 로고 크기 제한 */
+    height: auto;
+    cursor: pointer; /* 클릭 가능한 느낌 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    position: fixed;
+}
+
+/* 내비게이션 바 */
+.navbar {
+    position: fixed; /* 화면 상단에 고정 */
+    top: 0; /* 상단 고정 위치 */
+    left: 0; /* 좌측 고정 */
+    width: 100%; /* 전체 너비 */
+    height: auto;
+    z-index: 900; /* 다른 요소 위로 올림 */
+    background-color: #004F2D; /* 배경색 */
+    text-align: center;
+    padding: 30px 0; /* 내비게이션 바 높이 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    margin-bottom: 60px;
+    display: block;
+}
+
+/* 내비게이션 항목들 */
+.navbar ul {
+    list-style: none; /* 기본 리스트 스타일 제거 */
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    gap: 40px; /* 항목 간 간격 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 내비게이션 항목에 드롭다운 메뉴 추가를 위한 설정 */
+.nav-item {
+    position: relative; /* 드롭다운 메뉴가 해당 항목에 위치하도록 설정 */
+}
+
+/* 내비게이션 링크 스타일 */
+.navbar a {
+    color: #EDE1C4; /* 기본 글자 색 */
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    font-size: 1.8em; /* 글씨 크기 설정 */
+    padding: 15px 20px; /* 버튼 크기 조정 */
+    font-family: "Gowun Dodum", sans-serif; /* 폰트 설정 */
+}
+
+/* 내비게이션 링크 호버 스타일 */
+.navbar a:hover {
+    color: #ff6a00; /* 호버 시 색상 변경 */
+}
+
+/* 드롭다운 메뉴 */
+.dropdown {
+    display: none; /* 기본적으로 드롭다운 메뉴 숨김 */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3a3a3c; /* 배경색 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+    border-radius: 4px; /* 테두리 둥글게 처리 */
+    padding: 10px 0;
+    min-width: 160px;
+    z-index: 2; /* 드롭다운 메뉴가 다른 요소 위에 표시되도록 설정 */
+}
+
+/* 드롭다운 항목 스타일 */
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffb74d; /* 글자 색 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 1em;
+}
+
+/* 드롭다운 항목 호버 스타일 */
+.dropdown a:hover {
+    color: #ff6a00;
+    background-color: #4a4a4c;
+}
+
+/* 마우스를 올리면 드롭다운 메뉴 보이기 */
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+/* 드롭다운 메뉴 항목이 부모보다 뒤에 가려지지 않도록 z-index 값을 높임 */
+.nav-item:hover {
+    z-index: 3; /* 드롭다운 항목이 다른 요소보다 위에 위치하도록 설정 */
+}
+
+/* 왼쪽 배경 이미지 */
+.background-left {
+    position: fixed; /* 페이지 스크롤 시에도 고정 */
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-image: url('../media/mj-left.png'); /* 이미지 경로 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0.4) blur(5px); /* 흐림 효과 및 밝기 조정 */
+    z-index: -1; /* 배경 이미지는 다른 콘텐츠 뒤로 위치하도록 설정 */
+}
+
+/* 오른쪽 배경 이미지 */
+.background-right {
+    position: fixed; /* 페이지 스크롤 시에도 고정 */
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-image: url('../media/mj-right.png'); /* 이미지 경로 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0.4) blur(5px); /* 흐림 효과 및 밝기 조정 */
+    z-index: -1; /* 배경 이미지는 다른 콘텐츠 뒤로 위치하도록 설정 */
+}
+
+/* 메인 콘텐츠 */
+.main-content {
+    max-width: 50%; /* 중앙 콘텐츠의 최대 너비를 화면의 50%로 설정 */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* 메인 이미지 */
+.main-image {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.main-image img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover; /* 이미지 비율 유지하며 채우기 */
+}
+
+/* 오버레이 텍스트 */
+.overlay-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #EDE1C4;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 텍스트를 가운데 정렬 */
+    border-radius: 8px;
+}
+
+/* 배너 콘텐츠 */
+.banner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #F2E8CF;
+    padding-top: 150px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 배너 제목 */
+.title {
+    font-family: 'Playfair Display', serif;
+    padding: 20px;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* 텍스트 그림자 효과 */
+}
+
+/* 배너 설명 */
+.description {
+    font-size: 1.2em;
+    line-height: 1.8;
+    padding: 0 20px;
+    color: #EDE1C4;
+}
+
+/* 게임 카드 갤러리 */
+.game-gallery {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap; /* 카드들이 여러 줄로 감싸지도록 설정 */
+    justify-content: center;
+    margin-top: 50px; /* 게임 카드들이 메인 이미지 아래로 오도록 마진 추가 */
+}
+
+/* 게임 카드 스타일 */
+.game-card {
+    width: 300px;
+    height: 130px;
+    background-color: #C6B49C; /* 카드 배경색 */
+    text-align: center;
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+    transition: transform 0.3s, background-color 0.3s; /* 호버 시 변화 애니메이션 */
+    padding: 0px;
+}
+
+/* 게임 카드 호버 스타일 */
+.game-card:hover {
+    transform: scale(1.05); /* 호버 시 크기 확대 */
+    background-color: #5a5a5c; /* 배경 색상 변경 */
+}
+.game-card-text{
+    padding: 20px;
+}
+/* 게임 카드 제목 */
+.game-card h5 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #1A1A1A;
+    font-family: "Gowun Dodum", sans-serif;
+}
+
+/* 게임 카드 설명 */
+.game-card p {
+    font-size: 1.2em;
+    color: #1A1A1A;
+    padding: 0 10px 15px;
+    font-family: "Gowun Dodum", sans-serif;
+}
+
+/* 게임 카드 링크 스타일 */
+.game-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 반응형 디자인 (디스플레이 크기에 따라 스타일 변경) */
+/* 반응형 디자인 추가 */
+/* 1200px 이하 화면 */
+@media (max-width: 1200px) {
+    /* 오버레이 텍스트 */
+    /*.overlay-text {
+        font-size: 1.8em;  폰트 크기 축소 */
+       /* padding: 15px;  패딩 축소 
+    }*/
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1.5em; /* 폰트 크기 축소 */
+        padding: 10px 15px;  /*패딩 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 5px;
+        max-width: 60px; /* 로고 크기 축소 */
+    }
+}
+
+/* 768px 이하 화면 (작은 태블릿 및 큰 모바일) */
+@media (max-width: 768px) {
+    /* 오버레이 텍스트 */
+    .overlay-text {
+        font-size: 1.2em; /* 폰트 크기 더 축소 */
+        padding: 12px;  /*패딩 축소*/
+    } 
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1.2em; /* 폰트 크기 축소 */
+        padding: 8px 2px;  /*패딩 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 10px;
+        max-width: 50px;  /*로고 크기 더 축소 */
+    }
+    .page-logo {
+    left: 10px; /* 왼쪽 여백 설정 */
+    }
+}
+
+/* 480px 이하 화면 (스마트폰) */
+@media (max-width: 480px) {
+    /* 오버레이 텍스트 */
+    .overlay-text {
+        font-size: 1.2em; /* 폰트 크기 더 축소 */
+        padding: 10px; /* 패딩 더 축소 */
+    }
+
+    /* 내비게이션 아이템 */
+    .navbar a {
+        font-size: 1em; /* 폰트 크기 더 축소 */
+        padding: 5px 8px;  /*패딩 더 축소 */
+    }
+
+    /* 로고 크기 */
+    .page-logo img {
+        padding-top: 10px;
+        max-width: 50px; /* 로고 크기 더 축소 */
+    }
+    .page-logo {
+    left: 10px; /* 왼쪽 여백 설정 */
+    }
+}

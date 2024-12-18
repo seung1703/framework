@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포커 게임 설명</title>
+    <link rel="stylesheet" href="../css/pokerdt.css">
+</head>
+
+<body>
+    <div class="page-logo">
+        <a href="../main_pages/mainVer1.html">
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+     <!-- 내비게이션 바 -->
+     <nav class="navbar">
+        <ul>
+            <li class="nav-item">
+                <a href="../main_pages/dice.html">야추다이스</a>
+                <div class="dropdown">
+                    <a href="../pages/dice-rules.html">게임 설명</a>
+                    <a href="../pages/dice-strategy.html">게임 룰</a>
+                    <a href="../pages/dice-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/poker.html">포커</a>
+                <div class="dropdown">
+                    <a href="../pages/poker-rules.html">게임 설명</a>
+                    <a href="../pages/poker-strategy.html">게임 룰</a>
+                    <a href="../pages/poker-hands.html">게임 족보</a>
+                    <a href="../pages/poker-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/blackjack.html">블랙잭</a>
+                <div class="dropdown">
+                    <a href="../pages/blackjack-rules.html">게임 설명</a>
+                    <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                    <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/mahjong.html">마작</a>
+                <div class="dropdown">
+                    <a href="../pages/mahjong-rules.html">게임 설명</a>
+                    <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                    <a href="../pages/mahjong-hands.html">게임 족보</a>
+                    <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 메인 이미지 -->
+    <!-- 양쪽 배경 이미지 -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+    <div class="main-content">
+        <div class="banner">
+            <p class="description">
+                <div class="poker-content">
+                    <h1>포커 룰 설명</h1>
+                    <div class="section-box">
+                        <h2>포커의 공동 규칙</h2>
+                        <p>카드 조합:<br>
+                            각 게임에서 최종 목표는 높은 족보를 완성하는 것입니다.<br>
+                            족보는 로열 플러시, 스트레이트 플러시, 포카드 등 순위가 정해져 있으며, 게임마다 동일합니다.<br>
+                            승리 조건:<br>
+                            게임 종료 시 가장 높은 패를 가진 플레이어가 승리합니다.<br>
+                            경우에 따라, 모든 플레이어가 게임을 그만두면 남은 플레이어가 승리합니다.
+                        </p>
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>1) 텍사스 홀덤 (Texas Hold'em)</h2>
+                        <p>개요: 가장 널리 알려진 포커 변형으로, 전략적 사고와 손패 구성 능력이 중요한 게임입니다.<br>
+                        카드 분배: 플레이어는 2장의 개인 카드를 받고, 테이블에 5장의 공용 카드가 순차적으로 공개됩니다.<br>
+                        진행 방식:<br>
+                        첫 단계: 각 플레이어는 2장의 개인 카드를 받은 후, 자신의 패를 조합할 가능성을 예측합니다.<br>
+                        공용 카드 공개: 총 3번의 단계에 걸쳐 공용 카드 5장이 테이블에 공개됩니다(3장, 1장, 1장 순서).<br>
+                        카드 조합: 개인 카드 2장과 공용 카드 5장을 조합해 최고의 5카드 패를 만듭니다.<br>
+                        승리 방법: 마지막까지 남은 플레이어들 중 가장 높은 패를 가진 사람이 승리하며, 모든 플레이어가 게임을 그만두면 남은 사람이 승리합니다.
+                        </p>
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>2) 오마하 포커 (Omaha Poker)</h2>
+                        <p>개요: 텍사스 홀덤과 비슷하지만, 조합 규칙이 더 정교해지는 게임입니다.<br>
+                        카드 분배: 각 플레이어는 4장의 개인 카드를 받고, 테이블에 5장의 공용 카드가 공개됩니다.<br>
+                        진행 방식:<br>
+                        반드시 개인 카드 4장 중 2장과 공용 카드 5장 중 3장을 사용하여 패를 조합해야 합니다.<br>
+                        카드가 많아질수록 다양한 조합이 가능하기 때문에 전략적인 계산이 중요합니다.<br>
+                        특징: 더 높은 수준의 패가 나올 가능성이 크며, 게임의 긴장감이 높아집니다.</p>
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>3) 스터드 포커 (Stud Poker)</h2>
+                        <p>개요: 커뮤니티 카드가 없는 변형으로, 각 플레이어가 자신만의 카드로 게임을 진행합니다.<br>
+                        카드 분배: 플레이어는 일부 카드는 공개하고, 일부는 비공개 상태로 받습니다.<br>
+                        진행 방식:<br>
+                        예를 들어, 7카드 스터드에서는 각 플레이어가 총 7장의 카드를 받습니다.<br>
+                        카드가 한 장씩 배분될 때마다 패의 가능성을 분석하며 게임이 진행됩니다.<br>
+                        특징: 상대방의 공개된 카드를 통해 게임 상황을 예측할 수 있는 것이 큰 특징입니다.
+                        </p>               
+                    </div>
+            
+                    <div class="section-box">
+                        <h2>4) 드로우 포커 (Draw Poker)</h2>
+                        <p>개요: 가장 기본적인 형태의 포커로, 손패를 교환하며 패를 완성하는 게임입니다.<br>
+                        카드 분배: 각 플레이어는 5장의 카드를 받고, 필요 없는 카드를 바꾸어가며 최고의 패를 만듭니다.<br>
+                        진행 방식:<br>
+                        한 번의 교환 기회를 통해 불리한 패를 개선할 수 있습니다.<br>
+                        교환 후에는 각자의 패를 비교하여 승패를 결정합니다.<br>
+                        특징: 단순하지만 교환 과정에서 신중한 선택이 요구되며, 전통적인 분위기를 즐길 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </p>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>

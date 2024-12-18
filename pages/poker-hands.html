@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포커 게임 족보</title>
+    <link rel="stylesheet" href="../css/pokerdt.css">
+
+</head>
+<body>
+    <div class="page-logo">
+        <a href="../main_pages/mainVer1.html">
+            <img id="logo-img" src="../media/mainimg.png" alt="메인 로고">
+        </a>
+    </div>
+
+     <!-- 내비게이션 바 -->
+    <nav class="navbar">
+        <ul>
+            <li class="nav-item">
+                <a href="../main_pages/dice.html">야추다이스</a>
+                <div class="dropdown">
+                    <a href="../pages/dice-rules.html">게임 설명</a>
+                    <a href="../pages/dice-strategy.html">게임 룰</a>
+                    <a href="../pages/dice-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/poker.html">포커</a>
+                <div class="dropdown">
+                    <a href="../pages/poker-rules.html">게임 설명</a>
+                    <a href="../pages/poker-strategy.html">게임 룰</a>
+                    <a href="../pages/poker-hands.html">게임 족보</a>
+                    <a href="../pages/poker-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages//blackjack.html">블랙잭</a>
+                <div class="dropdown">
+                    <a href="../pages/blackjack-rules.html">게임 설명</a>
+                    <a href="../pages/blackjack-strategy.html">게임 룰</a>
+                    <a href="../pages/blackjack-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="../main_pages/mahjong.html">마작</a>
+                <div class="dropdown">
+                    <a href="../pages/mahjong-rules.html">게임 설명</a>
+                    <a href="../pages/mahjong-strategy.html">게임 룰</a>
+                    <a href="../pages/mahjong-hands.html">게임 족보</a>
+                    <a href="../pages/mahjong-simul.html">시뮬레이션</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 메인 이미지 -->
+    <!-- 양쪽 배경 이미지 -->
+    <div class="background-left"></div>
+    <div class="background-right"></div>
+    <div class="main-content">
+        <div class="banner">
+            <p class="description">
+                <div class="poker-content">
+                        <h1>포커 게임 족보</h1>
+                         <div class="section-box">
+                        <h2>1) 로열 플러시 (Royal Flush)</h2>
+                        <p>
+                            구성: 같은 무늬의 A, K, Q, J, 10<br>
+                            - 포커에서 가장 높은 패로, 같은 무늬의 가장 높은 숫자 카드 5장이 연속으로 구성됩니다.
+                        </p>
+                        <img src="../media/Playing-Cards/ace_of_spades.png" alt="로열 플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/king_of_spades.png" alt="로열 플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/queen_of_spades.png" alt="로열 플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/jack_of_spades.png" alt="로열 플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/10_of_spades.png" alt="로열 플러시 예시" class="poker-example">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>2) 스트레이트 플러시 (Straight Flush)</h2>
+                        <p>
+                            구성: 같은 무늬의 연속된 숫자 5장<br>
+                            - 같은 무늬로 이루어진 숫자 카드가 연속된 경우입니다.
+                        </p>
+                        <img src="../media/Playing-Cards/7_of_diamonds.png" alt="스트레이트 플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/8_of_diamonds.png" alt="스트레이트 플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/9_of_diamonds.png" alt="스트레이트 플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/10_of_diamonds.png" alt="스트레이트 플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/jack_of_diamonds.png" alt="스트레이트 플러시 예시" class="poker-example">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>3) 포카드 (Four of a Kind)</h2>
+                        <p>
+                            구성: 같은 숫자의 카드 4장<br>
+                            - 예를 들어, 4장의 8과 아무 숫자 카드 1장이 있는 경우입니다.
+                        </p>
+                        <img src="../media/Playing-Cards/9_of_diamonds.png" alt="포카드 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/9_of_hearts.png" alt="포카드 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/9_of_spades.png" alt="포카드 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/9_of_spades.png" alt="포카드 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/3_of_diamonds.png" alt="포카드 예시" class="poker-example-ext">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>4) 풀 하우스 (Full House)</h2>
+                        <p>
+                            구성: 같은 숫자 3장 + 다른 숫자 2장<br>
+                            - 숫자가 같은 카드 3장과 숫자가 다른 카드 2장이 조합된 패입니다.
+                        </p>
+                        <img src="../media/Playing-Cards/6_of_diamonds.png" alt="풀 하우스 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/6_of_diamonds.png" alt="풀 하우스 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/6_of_hearts.png" alt="풀 하우스 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/3_of_diamonds.png" alt="풀 하우스 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/3_of_spades.png" alt="풀 하우스 예시" class="poker-example">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>5) 플러시 (Flush)</h2>
+                        <p>
+                            구성: 같은 무늬의 카드 5장 (연속되지 않음)<br>
+                            - 숫자와 상관없이, 같은 무늬 카드가 5장일 때 성립합니다.
+                        </p>
+                        <img src="../media/Playing-Cards/2_of_spades.png" alt="플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/7_of_spades.png" alt="플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/jack_of_spades.png" alt="플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/ace_of_spades.png" alt="플러시 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/4_of_spades.png" alt="플러시 예시" class="poker-example">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>6) 스트레이트 (Straight)</h2>
+                        <p>
+                            구성: 숫자가 연속된 카드 5장 (무늬는 상관없음)<br>
+                            - 카드 숫자가 순서대로 이어지는 조합으로, 무늬는 관계없습니다.
+                        </p>
+                        <img src="../media/Playing-Cards/3_of_diamonds.png" alt="스트레이트 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/4_of_clubs.png" alt="스트레이트 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/5_of_diamonds.png" alt="스트레이트 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/6_of_spades.png" alt="스트레이트 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/7_of_hearts.png" alt="스트레이트 예시" class="poker-example">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>7) 트리플 (Three of a Kind)</h2>
+                        <p>- 같은 숫자 카드 3장</p>
+                        <img src="../media/Playing-Cards/8_of_hearts.png" alt="트리플 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/8_of_spades.png" alt="트리플 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/8_of_clubs.png" alt="트리플 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/2_of_clubs.png" alt="트리플 예시" class="poker-example-ext">
+                        <img src="../media/Playing-Cards/10_of_diamonds.png" alt="트리플 예시" class="poker-example-ext">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>8) 투 페어 (Two Pair)</h2>
+                        <p>- 숫자가 같은 카드 2쌍</p>
+                        <img src="../media/Playing-Cards/queen_of_diamonds.png" alt="투페어 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/queen_of_spades.png" alt="투페어 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/5_of_hearts.png" alt="투페어 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/5_of_spades.png" alt="투페어 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/2_of_clubs.png" alt="투페어 예시" class="poker-example-ext">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>9) 원 페어 (One Pair)</h2>
+                        <p>- 숫자가 같은 카드 1쌍</p>
+                        <img src="../media/Playing-Cards/king_of_clubs.png" alt="원 페어 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/king_of_diamonds.png" alt="원 페어 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/7_of_clubs.png" alt="원 페어 예시" class="poker-example-ext">
+                        <img src="../media/Playing-Cards/2_of_spades.png" alt="원 페어 예시" class="poker-example-ext">
+                        <img src="../media/Playing-Cards/jack_of_hearts.png" alt="원 페어 예시" class="poker-example-ext">
+                    </div>
+                    
+                    <div class="section-box">
+                        <h2>10) 하이카드 (High Card)</h2>
+                        <p>- 족보에 해당하지 않는 카드 중 가장 높은 숫자</p>
+                        <img src="../media/Playing-Cards/queen_of_diamonds.png" alt="하이카드 예시" class="poker-example">
+                        <img src="../media/Playing-Cards/7_of_spades.png" alt="하이카드 예시" class="poker-example-ext">
+                        <img src="../media/Playing-Cards/5_of_hearts.png" alt="하이카드 예시" class="poker-example-ext">
+                        <img src="../media/Playing-Cards/3_of_clubs.png" alt="하이카드 예시" class="poker-example-ext">
+                        <img src="../media/Playing-Cards/10_of_spades.png" alt="하이카드 예시" class="poker-example-ext">
+                    </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+</html>
